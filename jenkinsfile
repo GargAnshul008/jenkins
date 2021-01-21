@@ -1,0 +1,33 @@
+# pipeline: must be "top-level"
+# agents: where to execute
+# stages: where the "work" happens
+  - "stages" and "steps"
+# inside steps goes the script which executes commands on the jenkins server
+
+pipeline  {
+  agents any  {
+  
+  stages  {
+    
+    stage("build")  {
+      steps {
+        echo 'building the application...'
+      }
+    }
+    
+    stage("test") {
+      steps {
+        echo 'testing the application...'
+      }
+    }
+    
+    stage("deploy") {
+      steps {
+        echo 'deploying the application...'
+      }
+    } 
+  }
+  
+  }
+  
+}
